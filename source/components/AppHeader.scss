@@ -1,0 +1,25 @@
+@import "../../public/styles/variables.scss";
+
+.header-app {
+  position: fixed;
+  width: 100%;
+  background-color: $primary_color;
+  padding: 10px 0;
+  z-index: 9999;
+  text-align: center;
+}
+
+.header-app > .container {
+  grid-template-columns: $default_padding $logo_header_width repeat(9, 1fr) $default_padding;
+  grid-template-rows: $logo_header_height;
+}
+
+.header-logo {
+  height: $logo_header_height;
+  grid-column-start: 2;
+  text-align: left;
+
+  & img {
+    height: 100%;
+  }
+}

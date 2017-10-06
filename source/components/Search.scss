@@ -1,0 +1,37 @@
+@import "../../public/styles/variables.scss";
+
+.search {
+  grid-column-start: 3;
+  grid-column-end: 12;
+
+  & > form > input {
+    height: $logo_header_height;
+    width: calc(100% - #{ $logo_header_height });
+    border: none;
+    box-sizing: border-box;
+    border-radius: 4px 0 0 4px;
+    padding: 0 20px;
+    font-size: 18px;
+    outline: none;
+  }
+
+  & > form > button {
+    height: $logo_header_height;
+    width: $logo_header_height;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    padding: 0;
+    background-color: #eee;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($lighten_gray, 5%);
+    }
+
+    & > img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

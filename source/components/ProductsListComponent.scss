@@ -1,0 +1,18 @@
+@import "../../public/styles/variables.scss";
+
+.listProduct {
+  grid-column-start: 2;
+  grid-column-end: 12;
+  background: white;
+  margin: $default_padding 0;
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 0 $default_padding;
+}
+
+.breadcrumb {
+  grid-column-start: 2;
+  grid-column-end: 12;
+  margin-top: $default_padding;
+  color: #999;
+}
