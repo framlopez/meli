@@ -6,12 +6,10 @@ var app  = express();
 var port = 3001;
 
 // Routes
-var routes_app = require('./server_routes/routes_app');
 var routes_api = require('./server_routes/routes_api');
 
 // Server
 app.use(express.static(__dirname + 'public'));
-app.use('/', routes_app);
 app.use('/api', routes_api);
 
 app.listen(port, function() {

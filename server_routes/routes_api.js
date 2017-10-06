@@ -1,8 +1,8 @@
-// breadcrum // OK
+// breadcrum    // OK
 // loading ...
 // errors
-// doc
-// server
+// doc          // OK
+// server       // NO
 
 const express = require('express'),
       router  = express.Router(),
@@ -64,7 +64,6 @@ function getBreadcrumb(_filters) {
 }
 
 router.get('/items/:item_id', (req, res) => {
-  console.log('Item Detail API');
   var param = (req.params.item_id)?(req.params.item_id):(''),
       product, picture, breadcrumb;
 
@@ -97,7 +96,6 @@ router.get('/items/:item_id', (req, res) => {
 });
 
 router.get('/items', (req, res) => {
-  console.log('Items API');
   var param = (req.query.q)?(req.query.q):(''),
       products, pictures, breadcrumb;
 
@@ -106,7 +104,6 @@ router.get('/items', (req, res) => {
     products = data.results;
     pictures = getImageIdToProducts(products);
     breadcrumb = getBreadcrumb(data.filters);
-    console.log(breadcrumb);
 
     request.get('https://api.mercadolibre.com/pictures?ids=' + pictures.join(), (_err, _res, _data) => {
       pictures = JSON.parse(_data);
